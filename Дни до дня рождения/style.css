@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+}
+* {
+  font-size: 30px;
+}
+h1 {
+  font-size: 40px;
+}
+#message {
+  font-size: large;
+  padding: 5%;
+}
+.red-message {
+  color: red;
+}
