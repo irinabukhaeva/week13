@@ -6,6 +6,7 @@ const button = document.querySelector(".button");
 let time;
 let hideName = document.getElementById("hideName");
 let showName = document.getElementById("showName");
+let commentName = document.getElementById("commentname");
 
 function capitalize(userName) {
   const newName =
@@ -68,14 +69,35 @@ function timeConverter() {
 function addNewComment() {
   chat.innerHTML = `<div class="message">
   <img src="${avatar.value}" alt="face">
-  <p class="username">${capitalize(userName.value)}</p>
+  <p id="commentname">${capitalize(userName.value)}</p>
   <p class="date">${timeConverter()}</p>
   <p class="message">${comment.value.replace(/(xxx|viagra)/gi, "***")}</p>
   </div>`;
 }
 
+function setAnonim() {
+  if (userName.value == null) {
+    commentName.textContent = "Username";
+  }
+}
+console.log(commentName);
+
+function setRandomAvatar() {
+  let photos = [
+    "1659592293_1.jpg",
+    "1659592344_2.jpg",
+    "1659592345_7.jpg",
+    "1659592349_6.jpg",
+    "1659592369_3.jpg",
+    "1659592393_27.jpg",
+  ];
+  let index = Math.floor(Math.random() * 6);
+  avatar.value = photos[index];
+}
+if ((avatar.value = "")) setRandomAvatar();
+
 function resetForm() {
-  username.value = "";
+  userName.value = "";
   avatar.value = "";
   comment.value = "";
 }
